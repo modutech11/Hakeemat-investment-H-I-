@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hakeemat Investment (H.I) | Modern Hijab & Jalabia Couture</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- CSS VARIABLES: Modest Couture Palette --- */
+        :root {
+            --bg-dark: #0a0a0c;          /* Deep Acid Dark Neutral */
+            --card-bg: #141419;         /* Dark Elevation Surface */
+            --primary-neon: #ff007f;    /* High-Voltage Cyber Fuchsia */
+            --electric-blue: #2d5bff;   /* Gen Z Cobalt Accent */
+            --acid-lime: #ccff00;       /* High-energy Contrast Highlight */
+            --text-main: #ffffff;
+            --text-muted: #a1a1aa;
+            --border-glow: rgba(255, 0, 127, 0.25);
+            --glass-bg: rgba(20, 20, 25, 0.7);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .brand-name {
+            font-family: 'Syne', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+        }
+
+        /* --- HEADER & NAVBAR --- */
+        header {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 20px;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-badge {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--primary-neon), var(--electric-blue));
+            color: #fff;
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Syne', sans-serif;
+            font-weight: 800;
+            font-size: 20px;
+            box-shadow: 0 0 20px rgba(255, 0, 127, 0.4);
+        }
+
+        .brand-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand-name {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--text-main);
+        }
+
+        .brand-tagline {
+            font-size: 0.65rem;
+            color: var(--acid-lime);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav a:hover {
+            color: var(--primary-neon);
+            text-shadow: 0 0 10px var(--primary-neon);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            position: relative;
+            background: radial-gradient(circle at 50% 30%, rgba(255, 0, 127, 0.2), transparent 60%),
+                        linear-gradient(rgba(10, 10, 12, 0.85), rgba(10, 10, 12, 0.95)), 
+                        url('https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=1400&q=80') center/cover;
+            padding: 100px 20px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            background: linear-gradient(180deg, #ffffff 0%, var(--text-muted) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(90deg, var(--primary-neon), var(--acid-lime));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1rem;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+            color: var(--text-muted);
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary-neon);
+            color: #fff;
+            padding: 14px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            box-shadow: 0 0 25px rgba(255, 0, 127, 0.5);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 0 35px rgba(255, 0, 127, 0.8);
+            background: #e00070;
+        }
+
+        /* --- MAIN LAYOUT --- */
+        .container {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            letter-spacing: -0.5px;
+        }
+
+        .section-title p {
+            color: var(--acid-lime);
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 5px;
+        }
+
+        /* --- CARDS GRID --- */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary-neon);
+            box-shadow: 0 10px 30px rgba(255, 0, 127, 0.15);
+        }
+
+        .card-img-link {
+            display: block;
+            width: 100%;
+            height: 320px;
+            overflow: hidden;
+        }
+
+        .card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.9);
+            transition: transform 0.3s ease;
+        }
+
+        .card-img-link:hover .card-img {
+            transform: scale(1.05);
+        }
+
+        .card-body {
+            padding: 22px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .card-price {
+            color: var(--acid-lime);
+            font-size: 1.3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .card-btn {
+            margin-top: auto;
+            width: 100%;
+            background: transparent;
+            color: var(--text-main);
+            border: 2px solid var(--electric-blue);
+            padding: 12px;
+            border-radius: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        .card-btn:hover {
+            background: var(--electric-blue);
+            color: white;
+            box-shadow: 0 0 20px rgba(45, 91, 255, 0.5);
+        }
+
+        /* --- CUSTOM ORDER FORM --- */
+        .form-container {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 24px;
+            border: 1px solid var(--border-glow);
+            box-shadow: 0 0 30px rgba(0,0,0,0.5);
+            max-width: 800px;
+            margin: 0 auto 80px auto;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .full-width {
+            grid-column: span 2;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            padding: 14px;
+            background: #000;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            outline: none;
+            font-size: 0.9rem;
+            color: #fff;
+            transition: 0.3s;
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            border-color: var(--primary-neon);
+            box-shadow: 0 0 10px var(--border-glow);
+        }
+
+        .file-upload-box {
+            border: 2px dashed var(--primary-neon);
+            padding: 25px;
+            text-align: center;
+            border-radius: 12px;
+            background: rgba(255, 0, 127, 0.03);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .file-upload-box:hover {
+            background: rgba(255, 0, 127, 0.08);
+        }
+
+        .file-upload-box i {
+            font-size: 2rem;
+            color: var(--primary-neon);
+            margin-bottom: 10px;
+        }
+
+        /* --- AI-GENERATED HIJABI STYLIST BOT: TENI --- */
+        .chatbot-toggler {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 68px;
+            height: 68px;
+            background: linear-gradient(135deg, var(--primary-neon), var(--electric-blue));
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 0 25px rgba(255, 0, 127, 0.6);
+            z-index: 9999;
+            transition: 0.3s;
+            border: 2px solid var(--acid-lime);
+            overflow: hidden;
+        }
+
+        .chatbot-toggler img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .chatbot-container {
+            position: fixed;
+            bottom: 100px;
+            right: 25px;
+            width: 350px;
+            height: 480px;
+            background: var(--card-bg);
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.85);
+            display: none;
+            flex-direction: column;
+            overflow: hidden;
+            z-index: 9999;
+            border: 1px solid var(--primary-neon);
+        }
+
+        .chatbot-container.active {
+            display: flex;
+        }
+
+        .chat-header {
+            background: linear-gradient(135deg, #18181f, #0a0a0c);
+            color: white;
+            padding: 14px 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .chat-header-profile {
+            position: relative;
+            width: 46px;
+            height: 46px;
+        }
+
+        .chat-header-profile img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary-neon);
+        }
+
+        .online-dot {
+            position: absolute;
+            bottom: 2px;
+            right: 2px;
+            width: 10px;
+            height: 10px;
+            background: #00ff66;
+            border-radius: 50%;
+            border: 2px solid #000;
+        }
+
+        .chat-header-info {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .chat-header-info .name {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .chat-header-info .role {
+            font-size: 0.7rem;
+            color: var(--acid-lime);
+            font-weight: 600;
+        }
+
+        .chat-body {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            background: #0a0a0c;
+        }
+
+        .chat-msg {
+            max-width: 82%;
+            padding: 12px 16px;
+            border-radius: 16px;
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+
+        .chat-msg.bot {
+            background: #18181b;
+            color: var(--text-main);
+            align-self: flex-start;
+            border-bottom-left-radius: 2px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .chat-msg.user {
+            background: var(--electric-blue);
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 2px;
+        }
+
+        .chat-footer {
+            padding: 12px;
+            background: var(--card-bg);
+            display: flex;
+            gap: 8px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .chat-footer input {
+            flex: 1;
+            padding: 10px 14px;
+            background: #000;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            outline: none;
+            color: white;
+            font-size: 0.85rem;
+        }
+
+        .chat-footer button {
+            background: var(--primary-neon);
+            color: white;
+            border: none;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: #000;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-muted);
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 768px) {
+            .form-grid { grid-template-columns: 1fr; }
+            .full-width { grid-column: span 1; }
+            .hero h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="brand-logo">
+                <div class="logo-badge">H.I</div>
+                <div class="brand-details">
+                    <span class="brand-name">Hakeemat Inv.</span>
+                    <span class="brand-tagline">Modern Modest Couture</span>
+                </div>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#jalabia">Jalabias & Abayas</a></li>
+                    <li><a href="#hijab">Hijab Sets</a></li>
+                    <li><a href="#custom-order">Custom Order</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <h1>LUXURY <span>HIJAB & JALABIA</span> COUTURE</h1>
+        <p>Future-forward modesty, high-grade silk crepe Jalabias, and modern embellished Hijab sets built for elegance.</p>
+        <a href="#custom-order" class="btn">Order Custom Fit</a>
+    </section>
+
+    <div class="container">
+        
+        <!-- JALABIA & ABAYA CATALOGUE -->
+        <div class="section-title" id="jalabia">
+            <h2>Luxury Jalabias & Abayas</h2>
+            <p>// Modern Cut & Hand-Beaded Couture</p>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <a href="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=600&q=80" target="_blank" class="card-img-link">
+                    <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=600&q=80" alt="Royal Jalabia" class="card-img">
+                </a>
+                <div class="card-body">
+                    <div class="card-title">Royal Beaded Black Jalabia</div>
+                    <div class="card-price">₦185,000</div>
+                    <button class="card-btn" onclick="payWithPaystack(185000, 'Royal Beaded Black Jalabia')">Instant Checkout</button>
+                </div>
+            </div>
+            <div class="card">
+                <a href="https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?auto=format&fit=crop&w=600&q=80" target="_blank" class="card-img-link">
+                    <img src="https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?auto=format&fit=crop&w=600&q=80" alt="Silk Silk Jalabia" class="card-img">
+                </a>
+                <div class="card-body">
+                    <div class="card-title">Gold Embroidered Silk Abaya</div>
+                    <div class="card-price">₦220,000</div>
+                    <button class="card-btn" onclick="payWithPaystack(220000, 'Gold Embroidered Silk Abaya')">Instant Checkout</button>
+                </div>
+            </div>
+            <div class="card">
+                <a href="https://images.unsplash.com/photo-1609357605129-26f69add5d6e?auto=format&fit=crop&w=600&q=80" target="_blank" class="card-img-link">
+                    <img src="https://images.unsplash.com/photo-1609357605129-26f69add5d6e?auto=format&fit=crop&w=600&q=80" alt="Modern Kaftan" class="card-img">
+                </a>
+                <div class="card-body">
+                    <div class="card-title">Emerald Velvet Luxury Jalabia</div>
+                    <div class="card-price">₦250,000</div>
+                    <button class="card-btn" onclick="payWithPaystack(250000, 'Emerald Velvet Luxury Jalabia')">Instant Checkout</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- HIJAB & FABRICS SECTION -->
+        <div class="section-title" id="hijab">
+            <h2>Hijab Sets & Fabrics</h2>
+            <p>// Silk Chiffon, Modal & Satin Wraps</p>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <a href="https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=600&q=80" target="_blank" class="card-img-link">
+                    <img src="https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=600&q=80" alt="Silk Hijab" class="card-img">
+                </a>
+                <div class="card-body">
+                    <div class="card-title">Premium Chiffon Hijab (3-Pack)</div>
+                    <div class="card-price">₦45,000</div>
+                    <button class="card-btn" onclick="payWithPaystack(45000, 'Premium Chiffon Hijab Pack')">Buy Set</button>
+                </div>
+            </div>
+            <div class="card">
+                <a href="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=600&q=80" target="_blank" class="card-img-link">
+                    <img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=600&q=80" alt="Crystal Hijab" class="card-img">
+                </a>
+                <div class="card-body">
+                    <div class="card-title">Crystal Beaded Satin Hijab</div>
+                    <div class="card-price">₦65,000</div>
+                    <button class="card-btn" onclick="payWithPaystack(65000, 'Crystal Beaded Satin Hijab')">Buy Hijab</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- CUSTOM ORDER FORM -->
+        <div class="section-title" id="custom-order">
+            <h2>Custom Jalabia & Hijab Creation</h2>
+            <p>// Submit Your Measurements & Custom Design</p>
+        </div>
+
+        <div class="form-container">
+            <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" enctype="multipart/form-data">
+                <div class="form-grid">
+                    
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="Full Name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="client@domain.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone / WhatsApp</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+234..." required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dress-type">Order Type</label>
+                        <select id="dress-type" name="dress-type" required>
+                            <option value="Bespoke Jalabia">Bespoke Jalabia / Abaya</option>
+                            <option value="Custom Hijab Set">Custom Silk/Satin Hijab Set</option>
+                            <option value="Bridal Abaya">Bridal / Ceremony Abaya</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <h4 style="margin: 10px 0; color: var(--acid-lime); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;">Body Stats (Inches)</h4>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bust">Bust / Chest</label>
+                        <input type="number" id="bust" name="bust" placeholder="Inches">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="waist">Waist</label>
+                        <input type="number" id="waist" name="waist" placeholder="Inches">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="hips">Hips</label>
+                        <input type="number" id="hips" name="hips" placeholder="Inches">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="length">Jalabia Length (Shoulder to Floor)</label>
+                        <input type="number" id="length" name="length" placeholder="Inches">
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label>Upload Inspiration Image or Sketch</label>
+                        <div class="file-upload-box" onclick="document.getElementById('file-input').click();">
+                            <i class="fa-solid fa-cloud-arrow-up"></i>
+                            <p id="file-label" style="color: var(--text-muted); font-size: 0.85rem;">Click to upload your Jalabia or Hijab design photo</p>
+                            <input type="file" id="file-input" name="attachment" accept="image/*" style="display: none;" onchange="updateFileName(this)">
+                        </div>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="instructions">Custom Notes</label>
+                        <textarea id="instructions" name="instructions" rows="4" placeholder="Mention embroidery colors, sleeve style, hijab matching, or delivery date..."></textarea>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <button type="submit" class="btn" style="width: 100%;">Submit Custom Jalabia Request</button>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Hakeemat Investment (H.I). Premium Hijab & Jalabia Couture.</p>
+    </footer>
+
+    <!-- TENI AI STYLIST CHAT (BEAUTIFUL AI HIJABI ASSISTANT PROFILE) -->
+    <div class="chatbot-toggler" onclick="toggleChat()">
+        <!-- Beautiful realistic StyleGAN AI photo of non-existent woman paired with elegant Hijabi framing -->
+        <img src="https://thispersondoesnotexist.com" alt="Teni Assistant">
+    </div>
+
+    <div class="chatbot-container" id="chatbot">
+        <div class="chat-header">
+            <div class="chat-header-profile">
+                <img src="https://thispersondoesnotexist.com" alt="Teni">
+                <div class="online-dot"></div>
+            </div>
+            <div class="chat-header-info">
+                <span class="name">Teni</span>
+                <span class="role">Lead Hijab & Jalabia Stylist</span>
+            </div>
+            <i class="fa-solid fa-xmark" style="cursor: pointer; color: var(--text-muted);" onclick="toggleChat()"></i>
+        </div>
+        <div class="chat-body" id="chat-body">
+            <div class="chat-msg bot">
+                Assalamu Alaikum! 👋 I'm Teni, Lead Stylist at Hakeemat Investment. Need help picking a custom Jalabia size, matching Hijabs, or placing an order?
+            </div>
+        </div>
+        <div class="chat-footer">
+            <input type="text" id="chat-input" placeholder="Ask Teni about Jalabias & Hijabs..." onkeypress="handleChatKey(event)">
+            <button onclick="sendChatMessage()"><i class="fa-solid fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <!-- PAYSTACK INTEGRATION SCRIPT -->
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+    
+    <script>
+        function updateFileName(input) {
+            const label = document.getElementById('file-label');
+            if (input.files && input.files[0]) {
+                label.innerText = "Selected: " + input.files[0].name;
+                label.style.color = "#ccff00";
+            }
+        }
+
+        function toggleChat() {
+            document.getElementById('chatbot').classList.toggle('active');
+        }
+
+        function handleChatKey(e) {
+            if (e.key === 'Enter') sendChatMessage();
+        }
+
+        function sendChatMessage() {
+            const input = document.getElementById('chat-input');
+            const message = input.value.trim();
+            if (!message) return;
+
+            const chatBody = document.getElementById('chat-body');
+
+            const userDiv = document.createElement('div');
+            userDiv.className = 'chat-msg user';
+            userDiv.innerText = message;
+            chatBody.appendChild(userDiv);
+
+            input.value = '';
+            chatBody.scrollTop = chatBody.scrollHeight;
+
+            setTimeout(() => {
+                const botDiv = document.createElement('div');
+                botDiv.className = 'chat-msg bot';
+                
+                const lowerMsg = message.toLowerCase();
+                if (lowerMsg.includes('price') || lowerMsg.includes('cost') || lowerMsg.includes('how much')) {
+                    botDiv.innerText = "Our luxury Jalabias start from ₦185,000, and our premium silk Hijab sets start at ₦45,000. For bespoke embroidery, submit your sketch via the custom form!";
+                } else if (lowerMsg.includes('length') || lowerMsg.includes('size') || lowerMsg.includes('measurement')) {
+                    botDiv.innerText = "For Jalabias, measure shoulder-to-floor length (with heels if desired) along with your bust and hip size in the form above!";
+                } else if (lowerMsg.includes('hello') || lowerMsg.includes('hi') || lowerMsg.includes('salam')) {
+                    botDiv.innerText = "Wa Alaikum Assalam sister! 💕 How can I help you choose your dream Jalabia or Hijab today?";
+                } else {
+                    botDiv.innerText = "In Sha Allah, fill in your details in our Custom Creation form or click 'Instant Checkout' to reserve your Jalabia, and I'll ensure our head tailor crafts it perfectly!";
+                }
+
+                chatBody.appendChild(botDiv);
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }, 800);
+        }
+
+        function payWithPaystack(amountInNaira, itemTitle) {
+            // REPLACE WITH YOUR REAL PAYSTACK PUBLIC KEY
+            let public_key = 'pk_test_YOUR_PAYSTACK_PUBLIC_KEY'; 
+
+            if(public_key === 'pk_test_YOUR_PAYSTACK_PUBLIC_KEY') {
+                alert("Please add your Paystack API Key in the script tag!");
+                return;
+            }
+
+            let handler = PaystackPop.setup({
+                key: public_key,
+                email: 'customer@example.com',
+                amount: amountInNaira * 100, // Paystack requires amount in kobo
+                currency: 'NGN', 
+                ref: 'HI_JALABIA_'+Math.floor((Math.random() * 1000000000) + 1),
+                metadata: {
+                    custom_fields: [{ display_name: "Item", variable_name: "item", value: itemTitle }]
+                },
+                callback: function(response){
+                    alert('Order confirmed! Ref: ' + response.reference);
+                },
+                onClose: function(){
+                    alert('Order closed.');
+                }
+            });
+            handler.openIframe();
+        }
+    </script>
+</body>
+</html>
